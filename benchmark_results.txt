@@ -1,0 +1,86 @@
+Command: python -X utf8 graph_traversal.py --test-bfs
+======================================================================
+TESTING: Breadth-First Search (BFS)
+======================================================================
+
+Testing 5 random paths in 100-user network...
+
+Test 1: Path from User 51 to User 39
+  Length: 2 connections
+  Path: 51 → 40 → 39
+  Status: ✓ Valid
+
+Test 2: Path from User 72 to User 0
+  Length: 3 connections
+  Path: 72 → 27 → 45 → 0
+  Status: ✓ Valid
+
+Test 3: Path from User 89 to User 66
+  Length: 1 connections
+  Path: 89 → 66
+  Status: ✓ Valid
+
+Test 4: Path from User 95 to User 92
+  Length: 2 connections
+  Path: 95 → 91 → 92
+  Status: ✓ Valid
+
+Test 5: Path from User 94 to User 61
+  Length: 1 connections
+  Path: 94 → 61
+  Status: ✓ Valid
+
+Command: python -X utf8 graph_traversal.py --test-dfs
+======================================================================
+TESTING: Depth-First Search (DFS)
+======================================================================
+
+Testing 5 explorations in 100-user network...
+
+Test 1: Exploration from User 26
+  Reachable users: 100
+  Percentage of network: 100.0%
+  Status: ✓ Valid (includes start node)
+
+Test 2: Exploration from User 46
+  Reachable users: 100
+  Percentage of network: 100.0%
+  Status: ✓ Valid (includes start node)
+
+Test 3: Exploration from User 81
+  Reachable users: 100
+  Percentage of network: 100.0%
+  Status: ✓ Valid (includes start node)
+
+Test 4: Exploration from User 77
+  Reachable users: 100
+  Percentage of network: 100.0%
+  Status: ✓ Valid (includes start node)
+
+Test 5: Exploration from User 16
+  Reachable users: 100
+  Percentage of network: 100.0%
+  Status: ✓ Valid (includes start node)
+
+Command: python -X utf8 graph_traversal.py --benchmark
+======================================================================
+BENCHMARKING: BFS vs DFS Performance
+======================================================================
+
+Running 10 trials per algorithm on each network size...
+
+Size     Algorithm    Avg Time (ms)   Operations
+----------------------------------------------------------------------
+100      BFS          0.048           ~1284
+100      DFS          0.063           ~1284
+
+500      BFS          0.355           ~7468
+500      DFS          0.372           ~7468
+
+1000     BFS          0.831           ~17956
+1000     DFS          1.288           ~17956
+
+======================================================================
+Note: Both algorithms have O(V + E) time complexity.
+Performance differences come from implementation details and graph structure.
+======================================================================
